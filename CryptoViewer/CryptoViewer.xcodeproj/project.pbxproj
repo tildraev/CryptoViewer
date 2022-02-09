@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		D2FC808627B41E28003110DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC808527B41E28003110DA /* AppDelegate.swift */; };
 		D2FC808827B41E28003110DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC808727B41E28003110DA /* SceneDelegate.swift */; };
-		D2FC808A27B41E28003110DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC808927B41E28003110DA /* ViewController.swift */; };
 		D2FC808D27B41E28003110DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2FC808B27B41E28003110DA /* Main.storyboard */; };
 		D2FC808F27B41E2A003110DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2FC808E27B41E2A003110DA /* Assets.xcassets */; };
 		D2FC809227B41E2A003110DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2FC809027B41E2A003110DA /* LaunchScreen.storyboard */; };
+		D2FC80A227B421C7003110DA /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A127B421C7003110DA /* Coin.swift */; };
+		D2FC80A427B4248D003110DA /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A327B4248D003110DA /* NetworkController.swift */; };
+		D2FC80A627B424E7003110DA /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A527B424E7003110DA /* ResultError.swift */; };
+		D2FC80A827B43321003110DA /* CoinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A727B43321003110DA /* CoinListViewController.swift */; };
+		D2FC80AA27B43448003110DA /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A927B43448003110DA /* CoinTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D2FC808227B41E28003110DA /* CryptoViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2FC808527B41E28003110DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2FC808727B41E28003110DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D2FC808927B41E28003110DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2FC808C27B41E28003110DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2FC808E27B41E2A003110DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2FC809127B41E2A003110DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2FC809327B41E2A003110DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2FC80A127B421C7003110DA /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
+		D2FC80A327B4248D003110DA /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		D2FC80A527B424E7003110DA /* ResultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
+		D2FC80A727B43321003110DA /* CoinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewController.swift; sourceTree = "<group>"; };
+		D2FC80A927B43448003110DA /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,83 @@
 		D2FC808427B41E28003110DA /* CryptoViewer */ = {
 			isa = PBXGroup;
 			children = (
+				D2FC809C27B421A3003110DA /* Views */,
+				D2FC809B27B421A0003110DA /* Models */,
+				D2FC809A27B4219B003110DA /* Controllers */,
+				D2FC809927B41EF3003110DA /* Resources */,
+			);
+			path = CryptoViewer;
+			sourceTree = "<group>";
+		};
+		D2FC809927B41EF3003110DA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D2FC808527B41E28003110DA /* AppDelegate.swift */,
 				D2FC808727B41E28003110DA /* SceneDelegate.swift */,
-				D2FC808927B41E28003110DA /* ViewController.swift */,
-				D2FC808B27B41E28003110DA /* Main.storyboard */,
 				D2FC808E27B41E2A003110DA /* Assets.xcassets */,
 				D2FC809027B41E2A003110DA /* LaunchScreen.storyboard */,
 				D2FC809327B41E2A003110DA /* Info.plist */,
 			);
-			path = CryptoViewer;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D2FC809A27B4219B003110DA /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC80A027B421B8003110DA /* VIew */,
+				D2FC809F27B421B4003110DA /* Model */,
+				D2FC809E27B421B1003110DA /* Network */,
+				D2FC809D27B421AD003110DA /* Cell */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2FC809B27B421A0003110DA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC80A127B421C7003110DA /* Coin.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D2FC809C27B421A3003110DA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC808B27B41E28003110DA /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D2FC809D27B421AD003110DA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC80A927B43448003110DA /* CoinTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D2FC809E27B421B1003110DA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC80A327B4248D003110DA /* NetworkController.swift */,
+				D2FC80A527B424E7003110DA /* ResultError.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D2FC809F27B421B4003110DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D2FC80A027B421B8003110DA /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				D2FC80A727B43321003110DA /* CoinListViewController.swift */,
+			);
+			path = VIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +214,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2FC808A27B41E28003110DA /* ViewController.swift in Sources */,
+				D2FC80A427B4248D003110DA /* NetworkController.swift in Sources */,
+				D2FC80A627B424E7003110DA /* ResultError.swift in Sources */,
+				D2FC80A227B421C7003110DA /* Coin.swift in Sources */,
+				D2FC80A827B43321003110DA /* CoinListViewController.swift in Sources */,
 				D2FC808627B41E28003110DA /* AppDelegate.swift in Sources */,
 				D2FC808827B41E28003110DA /* SceneDelegate.swift in Sources */,
+				D2FC80AA27B43448003110DA /* CoinTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,7 +371,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V3Q6X8V58;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CryptoViewer/Info.plist;
+				INFOPLIST_FILE = CryptoViewer/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +399,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9V3Q6X8V58;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CryptoViewer/Info.plist;
+				INFOPLIST_FILE = CryptoViewer/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -14,6 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        NetworkController.fetchCoinList { result in
+            switch result {
+                
+            case .success(let tld):
+                print(tld.tickerList.keys)
+            case .failure(let error):
+                print(error)
+            }
+        }
         return true
     }
 
