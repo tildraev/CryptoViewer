@@ -44,7 +44,7 @@ class CoinDetailsViewController: UIViewController {
         nameLabel.text = conversion.markets[0].name
         priceLabel.text = "\(conversion.markets[0].price)"
         
-        var roundedVolume = Int(conversion.markets[0].volume.rounded())
+        let roundedVolume = Int(conversion.markets[0].volume.rounded())
         volumeLabel.text = "\(roundedVolume)"
     }
 }

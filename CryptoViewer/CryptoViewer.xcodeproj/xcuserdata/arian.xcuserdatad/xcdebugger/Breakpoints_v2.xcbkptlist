@@ -7,48 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D7DFAA87-C5C8-4630-95CA-EAF849B13ADF"
+            uuid = "38F428EE-2858-4B18-B5F6-5318AC551C9F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CryptoViewer/Controllers/Network/NetworkController.swift"
+            filePath = "CryptoViewer/Controllers/VIew/ComparisonViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "fetchConversion(firstCurrencyTicker:secondCurrencyTicker:completion:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "searchButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EE21B867-3131-4B60-AF5F-731883A45175"
+            uuid = "6B86AF86-68FE-4EDF-B457-CE138892BC90"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CryptoViewer/Controllers/Network/NetworkController.swift"
+            filePath = "CryptoViewer/Controllers/VIew/ComparisonViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
-            landmarkName = "fetchConversion(firstCurrencyTicker:secondCurrencyTicker:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B6BB8410-7454-48E1-AF92-FEB5EF8A79AC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CryptoViewer/Controllers/Network/NetworkController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "fetchConversion(firstCurrencyTicker:secondCurrencyTicker:completion:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "searchButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
