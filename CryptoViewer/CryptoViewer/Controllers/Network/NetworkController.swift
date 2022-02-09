@@ -8,7 +8,7 @@
 import Foundation
 
 class NetworkController {
-    private static let baseURLString = "https://api.exchange.cryptomkt.com"
+    private static let baseURLString = "https://www.worldcoinindex.com"
     
     static func fetchCoinList(completion: @escaping (Result<TopLevelDictionary, ResultError>) -> Void ) {
         guard let baseURL = URL(string: baseURLString) else {
@@ -17,19 +17,20 @@ class NetworkController {
         }
         
         var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        
-        urlComponents?.path = "/api/3/public/currency"
+        urlComponents?.path = "/apiservice/json"
+        let apiKeyQuery = URLQueryItem(name: "key", value: "AsEnCev6qZIYi80m4zcJ1ML3XriV8Vvu4Bx")
+        urlComponents?.queryItems = [apiKeyQuery]
         
         guard let finalURL = urlComponents?.url else {
-            completion(.failure(.invalidURL(urlComponents?.url?.debugDescription ?? "")))
+            completion(.failure(.invalidURL(urlComponents?.url?.absoluteString ?? "" )))
             return
         }
         
+        
         URLSession.shared.dataTask(with: finalURL) { data, _, error in
+            
             if let error = error {
-                
                 completion(.failure(.thrownError(error)))
-                
                 return
             }
             
@@ -39,36 +40,54 @@ class NetworkController {
             }
             
             do {
-                guard var decodedData = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String:Any] else {
-                    completion(.failure(.unableToDecode))
-                    return
-                }
-                
-                //                var coinDetails: [[String:String]] = [[:]]
-                //
-                //                for dictionary in decodedData {
-                //                    let decodedName = try JSONDecoder().decode(CoinDetails.self, from: Data(decodedData.values))
-                //                    coinDetails.append([dictionary.key : dictionary.value])
-                //                }
-                //
-                guard let topLevelDictionary = TopLevelDictionary(dictionary: decodedData) else {
-                    completion(.failure(.unableToDecode))
-                    return
-                }
+                let topLevelDictionary = try JSONDecoder().decode(TopLevelDictionary.self, from: data)
                 completion(.success(topLevelDictionary))
-                
             } catch {
-                print(finalURL)
+                completion(.failure(.thrownError(error)))
+            }
+        }.resume()
+    }
+    
+    static func fetchConversion(firstCurrencyTicker: String, secondCurrencyTicker: String, completion: @escaping (Result<Conversion, ResultError>) -> Void) {
+        let baseURLString = "https://www.worldcoinindex.com"
+        let apiKey = "AsEnCev6qZIYi80m4zcJ1ML3XriV8Vvu4Bx"
+        guard let  baseURL = URL(string: baseURLString) else {
+            completion(.failure(.invalidURL(baseURLString)))
+            return
+        }
+        
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
+        urlComponents?.path = "/apiservice/ticker"
+        let keyQuery = URLQueryItem(name: "key", value: apiKey)
+        let labelQuery = URLQueryItem(name: "label", value: "\(firstCurrencyTicker)\(secondCurrencyTicker)")
+        let fiatQuery = URLQueryItem(name: "fiat", value: "USD")
+        urlComponents?.queryItems = [keyQuery, labelQuery, fiatQuery]
+        
+        guard let finalURL = urlComponents?.url else {
+            completion(.failure(.invalidURL(urlComponents?.url?.absoluteString ?? "" )))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: finalURL) { data, _, error in
+            if let error = error {
                 completion(.failure(.thrownError(error)))
                 return
             }
+            
+            guard let data = data else {
+                completion(.failure(.noData))
+                return
+            }
+            
+            do {
+                let decodedConversion = try JSONDecoder().decode(Conversion.self, from: data)
+                
+                completion(.success(decodedConversion))
+            } catch {
+                completion(.failure(.thrownError(error)))
+                return
+            }
+
         }.resume()
-        
-        
     }
-//    static func fetchCoinName(from tickerList: [String], completion: @escaping (Result<CoinDetails, ResultError>) -> Void ) {
-//        for ticker in tickerList {
-//            
-//        }
-//    }
 }

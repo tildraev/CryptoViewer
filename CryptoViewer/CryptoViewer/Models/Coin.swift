@@ -7,30 +7,48 @@
 
 import Foundation
 
-class TopLevelDictionary {
+struct TopLevelDictionary: Decodable{
     
-    var tickerList: [String:Any]
-    
-    init? (dictionary: [String:Any]) {
-        var tempCoinDictionary: [String:Any] = [:]
-        
-        for coin in dictionary {
-            tempCoinDictionary[coin.key] = coin.value
-        }
-        
-        self.tickerList = tempCoinDictionary
+    private enum CodingKeys: String, CodingKey {
+        case coins = "Markets"
     }
+    
+    var coins: [Coin]
 }
 
 struct Coin: Decodable {
     
     private enum CodingKeys: String, CodingKey {
-        case fullName = "full_name"
+        case label = "Label"
+        case name = "Name"
+        case priceUSD = "Price_usd"
     }
     
-    var fullName: String
+    var label: String
+    var name: String
+    var priceUSD: Double
 }
 
-struct DecodedTopLevelDictionary: Decodable {
+struct Conversion: Decodable {
     
+    private enum CodingKeys: String, CodingKey {
+        case markets = "Markets"
+    }
+    
+    var markets: [ConversionDetails]
+}
+
+struct ConversionDetails: Decodable {
+    
+    private enum CodingKeys: String, CodingKey {
+        case label = "Label"
+        case name = "Name"
+        case price = "Price"
+        case volume = "Volume_24h"
+    }
+    
+    var label: String
+    var name: String
+    var price: Double
+    var volume: Double
 }

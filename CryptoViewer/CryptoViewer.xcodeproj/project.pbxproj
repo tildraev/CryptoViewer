@@ -17,6 +17,8 @@
 		D2FC80A627B424E7003110DA /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A527B424E7003110DA /* ResultError.swift */; };
 		D2FC80A827B43321003110DA /* CoinListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A727B43321003110DA /* CoinListViewController.swift */; };
 		D2FC80AA27B43448003110DA /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80A927B43448003110DA /* CoinTableViewCell.swift */; };
+		D2FC80AC27B44720003110DA /* ComparisonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80AB27B44720003110DA /* ComparisonViewController.swift */; };
+		D2FC80AE27B455C9003110DA /* CoinDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FC80AD27B455C9003110DA /* CoinDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		D2FC80A527B424E7003110DA /* ResultError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
 		D2FC80A727B43321003110DA /* CoinListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListViewController.swift; sourceTree = "<group>"; };
 		D2FC80A927B43448003110DA /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
+		D2FC80AB27B44720003110DA /* ComparisonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonViewController.swift; sourceTree = "<group>"; };
+		D2FC80AD27B455C9003110DA /* CoinDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				D2FC80A727B43321003110DA /* CoinListViewController.swift */,
+				D2FC80AB27B44720003110DA /* ComparisonViewController.swift */,
+				D2FC80AD27B455C9003110DA /* CoinDetailsViewController.swift */,
 			);
 			path = VIew;
 			sourceTree = "<group>";
@@ -217,7 +223,9 @@
 				D2FC80A427B4248D003110DA /* NetworkController.swift in Sources */,
 				D2FC80A627B424E7003110DA /* ResultError.swift in Sources */,
 				D2FC80A227B421C7003110DA /* Coin.swift in Sources */,
+				D2FC80AC27B44720003110DA /* ComparisonViewController.swift in Sources */,
 				D2FC80A827B43321003110DA /* CoinListViewController.swift in Sources */,
+				D2FC80AE27B455C9003110DA /* CoinDetailsViewController.swift in Sources */,
 				D2FC808627B41E28003110DA /* AppDelegate.swift in Sources */,
 				D2FC808827B41E28003110DA /* SceneDelegate.swift in Sources */,
 				D2FC80AA27B43448003110DA /* CoinTableViewCell.swift in Sources */,
