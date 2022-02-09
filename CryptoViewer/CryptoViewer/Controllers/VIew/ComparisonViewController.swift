@@ -17,25 +17,22 @@ class ComparisonViewController: UIViewController {
     
     @IBOutlet weak var conversionLabel: UILabel!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-    
     @IBAction func switchButtonTapped(_ sender: Any) {
+        
+        leftCurrencyLabel.resignFirstResponder()
+        rightCurrencyLabel.resignFirstResponder()
         
         let tempLeft = leftCurrencyLabel.text
         let tempRight = rightCurrencyLabel.text
         
         leftCurrencyLabel.text = tempRight
         rightCurrencyLabel.text = tempLeft
-        
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
+        
+        leftCurrencyLabel.resignFirstResponder()
+        rightCurrencyLabel.resignFirstResponder()
         
         if let leftCurrencyLabelText = leftCurrencyLabel.text, !leftCurrencyLabelText.isEmpty,
            let rightCurrencyLabelText = rightCurrencyLabel.text, !rightCurrencyLabelText.isEmpty {
