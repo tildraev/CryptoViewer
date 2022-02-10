@@ -30,6 +30,12 @@ class CoinDetailsViewController: UIViewController {
     @IBOutlet weak var volumeLabel: UILabel!
     @IBOutlet weak var tickerLabel: UILabel!
     
+    @IBOutlet weak var namePlaceholderLabel: UILabel!
+    @IBOutlet weak var tickerPlaceholderLabel: UILabel!
+    @IBOutlet weak var pricePlaceholderLabel: UILabel!
+    @IBOutlet weak var volumePlaceholderLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -17,6 +17,20 @@ class ComparisonViewController: UIViewController {
     
     @IBOutlet weak var conversionLabel: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViews()
+    }
+    
+    func updateViews() {
+        switchButton.layer.cornerRadius = 15
+        switchButton.layer.borderWidth = 1
+        switchButton.layer.borderColor = CGColor.init(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+        searchButton.layer.cornerRadius = 15
+        searchButton.layer.borderWidth = 1
+        searchButton.layer.borderColor = .init(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.5)
+    }
+    
     @IBAction func switchButtonTapped(_ sender: Any) {
         
         leftCurrencyLabel.resignFirstResponder()
@@ -27,6 +41,8 @@ class ComparisonViewController: UIViewController {
         
         leftCurrencyLabel.text = tempRight
         rightCurrencyLabel.text = tempLeft
+        
+        
     }
     
     @IBAction func searchButtonTapped(_ sender: Any) {
