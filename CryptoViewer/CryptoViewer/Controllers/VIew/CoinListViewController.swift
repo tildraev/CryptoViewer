@@ -14,7 +14,6 @@ class CoinListViewController: UIViewController {
     var topLevelDictionary: TopLevelDictionary? {
         didSet {
             DispatchQueue.main.async {
-                self.searchBar.showsCancelButton = true
                 self.searchBar.isHidden = false
                 self.coinListTableView.reloadData()
             }
@@ -92,7 +91,7 @@ class CoinListViewController: UIViewController {
                                 print(error)
                             }
                         }
-
+                        
                     } else {
                         
                         guard let label = topLevelDictionary?.coins[index.row].label else { return }
@@ -163,17 +162,12 @@ extension CoinListViewController: UISearchBarDelegate {
         
         if searchText == "" {
             DispatchQueue.main.async {
+                self.searchBar.resignFirstResponder()
                 self.coinListTableView.reloadData()
             }
         } else {
             updateResults(with: searchText)
         }
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.searchTextField.text = ""
-        searchBar.resignFirstResponder()
-        getFullCoinList()
     }
     
     func updateResults(with searchText: String) {
@@ -188,7 +182,6 @@ extension CoinListViewController: UISearchBarDelegate {
         }
         
         filteredTopLevelDictionary = TopLevelDictionary(coins: filteredCoinsArray)
-        //self.topLevelDictionary = filteredTopLevelDictionary
         
         DispatchQueue.main.async {
             self.coinListTableView.reloadData()
