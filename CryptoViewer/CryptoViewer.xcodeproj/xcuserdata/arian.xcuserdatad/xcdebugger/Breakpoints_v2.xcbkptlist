@@ -46,8 +46,8 @@
             filePath = "CryptoViewer/Controllers/VIew/CoinListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "updateResults(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "CryptoViewer/Controllers/VIew/CoinListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "updateResults(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "CryptoViewer/Controllers/VIew/CoinListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
             landmarkName = "updateResults(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "CryptoViewer/Controllers/VIew/CoinListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "updateResults(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "CryptoViewer/Controllers/VIew/CoinListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "updateResults(with:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "CryptoViewer/Controllers/VIew/CoinListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "updateResults(with:)"
             landmarkType = "7">
          </BreakpointContent>
