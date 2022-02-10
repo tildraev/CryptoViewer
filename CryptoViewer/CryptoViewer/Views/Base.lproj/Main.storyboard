@@ -108,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1e1-JO-9wL">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="95" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -154,19 +154,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="f0U-tQ-gCJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nYI-bg-h3o"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="1e1-JO-9wL" firstAttribute="top" secondItem="f0U-tQ-gCJ" secondAttribute="bottom" id="2Jy-k1-Ijr"/>
+                            <constraint firstItem="f0U-tQ-gCJ" firstAttribute="leading" secondItem="nYI-bg-h3o" secondAttribute="leading" id="FOn-v8-g8q"/>
                             <constraint firstItem="1e1-JO-9wL" firstAttribute="leading" secondItem="nYI-bg-h3o" secondAttribute="leading" id="FmB-VL-9qP"/>
-                            <constraint firstItem="1e1-JO-9wL" firstAttribute="top" secondItem="nYI-bg-h3o" secondAttribute="top" id="W80-ST-qFf"/>
                             <constraint firstItem="nYI-bg-h3o" firstAttribute="trailing" secondItem="1e1-JO-9wL" secondAttribute="trailing" id="WKW-iK-Qdc"/>
+                            <constraint firstItem="f0U-tQ-gCJ" firstAttribute="top" secondItem="nYI-bg-h3o" secondAttribute="top" id="gd0-sG-Clx"/>
+                            <constraint firstItem="f0U-tQ-gCJ" firstAttribute="trailing" secondItem="nYI-bg-h3o" secondAttribute="trailing" id="kDh-05-Mzt"/>
                             <constraint firstItem="nYI-bg-h3o" firstAttribute="bottom" secondItem="1e1-JO-9wL" secondAttribute="bottom" id="wn9-S5-a04"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="dollarsign.circle" catalog="system" selectedImage="dollarsign.circle.fill" id="g4F-HC-Dhf"/>
                     <connections>
                         <outlet property="coinListTableView" destination="1e1-JO-9wL" id="g6D-a1-LqH"/>
+                        <outlet property="searchBar" destination="f0U-tQ-gCJ" id="bk5-hk-piN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kST-ZC-QIl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

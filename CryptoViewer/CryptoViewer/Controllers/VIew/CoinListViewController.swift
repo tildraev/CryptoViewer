@@ -9,6 +9,8 @@ import UIKit
 
 class CoinListViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var topLevelDictionary: TopLevelDictionary? {
         didSet {
             DispatchQueue.main.async {
@@ -17,6 +19,8 @@ class CoinListViewController: UIViewController {
         }
     }
     
+    var filteredTopLevelDictionary: TopLevelDictionary?
+    
     @IBOutlet weak var coinListTableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,14 +28,23 @@ class CoinListViewController: UIViewController {
 
         coinListTableView.delegate = self
         coinListTableView.dataSource = self
+        searchBar.delegate = self
         
         // Do any additional setup after loading the view.
         
+        getFullCoinList()
+    }
+    
+    func getFullCoinList() {
         NetworkController.fetchCoinList { result in
             switch result {
                 
             case .success(let tld):
                 self.topLevelDictionary = tld
+                
+                DispatchQueue.main.async {
+                    self.coinListTableView.reloadData()
+                }
             case .failure(let error):
                 print(error)
             }
@@ -88,5 +101,36 @@ extension CoinListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+}
+
+extension CoinListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            getFullCoinList()
+        } else {
+            updateResults(with: searchText)
+        }
+    }
+    
+    func updateResults(with searchText: String) {
+        
+        
+        guard let topLevelDictionary = topLevelDictionary else { return }
+        
+        var filteredCoinsArray: [Coin] = []
+        
+        for coin in topLevelDictionary.coins {
+            if coin.name.hasPrefix(searchText) {
+                filteredCoinsArray.append(coin)
+            }
+        }
+        
+        filteredTopLevelDictionary = TopLevelDictionary(coins: filteredCoinsArray)
+        self.topLevelDictionary = filteredTopLevelDictionary
+        
+        DispatchQueue.main.async {
+            self.coinListTableView.reloadData()
+        }
     }
 }
